@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>股票</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <nav></nav>
+    <div class="wrap">
+        <div class="container">
+            <div class="tab-head">
+                <a class="tab-item active" data-target="#operatin">交易流水列表</a>
+                <a class="tab-item" data-target="#pending">待处理列表</a>
+                <button class="ui-btn btn-blue fr mr-16">当日持仓列表</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-content-box" id="operatin">
+                    <table class="ui-table" id="operatin-table">
+                        <tr>
+                            <th>委托时间</th>
+                            <th>股票代码</th>
+                            <th>股票名称</th>
+                            <th>成交价格</th>
+                            <th>委托价格</th>
+                            <th>成交数量</th>
+                            <th>委托数量</th>
+                            <th>成交比例</th>
+                            <th>方向</th>
+                            <th>撤单数量</th>
+                            <th>入仓信号</th>
+                            <th>出仓信号</th>
+                            <th>撤单信号</th>
+                            <th>浮动盈亏</th>
+                            <th>委托单号</th>
+                            <th>订单号</th>
+                            <th>交易编号</th>
+                            <th>是否平仓</th>
+                        </tr>
+                        <!-- <tr>
+                            <td>9:35:15</td>
+                            <td>600219</td>
+                            <td>南山铝业</td>
+                            <td class="fc-yellow">3.9135</td>
+                            <td class="fc-yellow">3.92</td>
+                            <td>100000</td>
+                            <td>100000</td>
+                            <td>
+                                <div class="progress-wrap">
+                                    <span>50%</span>
+                                    
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </td>
+                            <td class="fc-green">买入</td>
+                            <td>0</td>
+                            <td>入仓信号1</td>
+                            <td>出仓信号1</td>
+                            <td>撤单信号1</td>
+                            <td class="fc-red">25,000</td>
+                            <td>12345</td>
+                            <td>12345</td>
+                            <td>1</td>
+                            <td class="fc-red">是</td>
+                        </tr> -->
+                    </table>
+                </div>
+                <div class="tab-content-box hide" id="pending">
+                    <table class="ui-table" id="pending-table">
+                        <tr>
+                            <th>委托时间</th>
+                            <th>股票代码</th>
+                            <th>股票名称</th>
+                            <th>成交价格</th>
+                            <th>委托价格</th>
+                            <th>成交数量</th>
+                            <th>委托数量</th>
+                            <th>成交比例</th>
+                            <th>方向</th>
+                            <th>撤单数量</th>
+                            <th>入仓信号</th>
+                            <th>出仓信号</th>
+                            <th>撤单信号</th>
+                            <th>浮动盈亏</th>
+                            <th>委托单号</th>
+                            <th>订单号</th>
+                            <th>交易编号</th>
+                            <th>是否平仓</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- loading -->
+    <div class="layer loading-layer">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+    </div>
+</body>
+</html>
