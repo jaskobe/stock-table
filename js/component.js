@@ -8,7 +8,8 @@ UTILS = {
         getCurrentPosition: HOST + '/stock/getCurrentPosition', //当日持仓列表
         dailyClosing: HOST + '/stock/dailyClosing', //每日收盘统计
         monthlyStat: HOST + '/stock/monthlyStat', //月统计
-        singleStockStat: HOST + '/stock/singleStockStat', //个股统计，?code=
+        singleStockStat: HOST + '/stock/singleStockStat', //个股统计，?code=123
+        cancelOrder: HOST + '/stock/cancelOrder', //撤销订单
     },
     //获取浏览器参数
     parseUrlParam : function(url) {
@@ -68,6 +69,14 @@ UTILS = {
             error: function() {
 
 
+            },
+	        beforeSend: function () {
+		        UTILS.switchLoading(true);
+	        },
+            complete: function () {
+	            if (op.dataDone && typeof(op.dataDone) == 'function') {
+		            op.dataDone.apply(null, arguments);
+	            }
             }
         };
         $.ajax(options);
@@ -83,9 +92,20 @@ UTILS = {
             $(target).show().siblings(".tab-content-box").hide();
         })
     },
-    //显示或隐藏loading动画，true：显示，false：隐藏
-    switchLoading: function(status){
-        status ? $(".loading-layer").show() : $(".loading-layer").hide();
+    //显示或隐藏loading动画
+    //参数：loading => true：显示，false：隐藏
+    //参数：layer => true || ""：影响蒙版，false：不影响蒙版
+    switchLoading: function(loading,layer){
+        if(loading){
+	        $(".layer").show();
+	        $(".loading").show();
+        }else if(!loading && layer == false){
+	        $(".loading").hide();
+        }else if(!loading){
+	        $(".loading").hide();
+	        $(".layer").hide();
+        }
+        return
     },
     //渲染进度条
     renderProgress: function(){

@@ -19,7 +19,7 @@ html,body{
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.5);
-    z-index: 99999;
+    z-index: 9999;
 }
 .loading{
     position: fixed;
@@ -29,24 +29,25 @@ html,body{
     left:50%;
     margin-top: -20px;
     margin-left: -40px;
+    z-index: 99999;
 }
 .loading span{
     display: inline-block;
     width: 8px;
     height: 100%;
     border-radius: 4px;
-    background: lightgreen;
+    background: #1FBAD6;
     -webkit-animation: load 1s ease infinite;
 }
 @-webkit-keyframes load{
     0%,100%{
         height: 40px;
-        background: lightgreen;
+        background: #1FBAD6;
     }
     50%{
         height: 70px;
         margin: -15px 0;
-        background: lightblue;
+        background: #1FBAD6;
     }
 }
 .loading span:nth-child(2){
@@ -78,6 +79,10 @@ html,body{
 .mr-16{
     margin-right: 16px;
 }
+
+.mt-20{
+    margin-top: 20px;
+}
 /* float */
 .fl{
     float: left;
@@ -106,6 +111,54 @@ html,body{
 .ui-btn.btn-blue:hover,
 .ui-btn.btn-blue:active{
     background: #25d1f1;
+}
+
+/*icons*/
+.icon{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.icon-close{
+    background-image: url("../img/icon-close.png");
+    position: absolute;
+    right: 20px;
+    top: 18px;
+}
+
+/*nav*/
+nav{
+    position: fixed;
+    top:0;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 60px;
+    background: #11111A;
+    border-bottom: 1px solid #1FBAD6;
+    z-index: 9999;
+}
+nav>ul>li{
+    display: inline-block;
+    line-height: 60px;
+}
+nav>ul>li>a{
+    display: block;
+    font-size: 14px;
+    padding: 0 15px;
+    color:  rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: .3s;
+}
+nav>ul>li>a:hover{
+    color:  rgba(31, 186, 214,1);
+}
+nav>ul>li>a.active{
+    color: #fff;
+    background: rgba(31, 186, 214,1);
 }
 /* tab */
 .tab-head{
@@ -154,7 +207,10 @@ html,body{
     padding: 13px 2px;
     text-align: center;
 }
-
+.ui-table tr td>a{
+    color: #fff;
+    text-decoration: none;
+}
 .ui-table tr:nth-child(2n+1){
     background: #141A27;
 }
@@ -186,4 +242,27 @@ html,body{
     height: 100%;
     background: #16C71E;
     z-index: 99;
+}
+
+.border-box{
+    position: absolute;
+    top: 100px;
+    max-width: 90%;
+    padding: 20px;
+    border: 1px solid #1FBAD6;
+    z-index: 99999;
+    text-align: center;
+}
+.border-box h3{
+    font-size: 14px;
+    color: #fff;
+}
+.position-box{
+    background: #0F0F1B;
+    width: 360px;
+    height: 500px;
+    overflow: scroll;
+    left: 50%;
+    margin-left: -180px;
+
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>股票</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/daily-closing.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="daily-closing.html">每日收盘统计</a></li>
+            <li><a href="monthly-slat.html" class="active">月统计</a></li>
+        </ul>
+    </nav>
+    <div class="wrap">
+        <div class="container">
+
+            <div class="tab-content">
+                <div class="tab-content-box">
+                    <table class="ui-table" id="daily-closing-table">
+                        <tr>
+                            <th></th>
+                            <th>序号</th>
+                            <th>股票代码</th>
+                            <th>股票名称</th>
+                            <th>总股数</th>
+                            <th>总市值</th>
+                            <th>平均使用率</th>
+                            <th>总成交额</th>
+                            <th>交易成本</th>
+                            <th>融券券息</th>
+                            <th>融券过户费</th>
+                            <th>净盈亏</th>
+                            <th>利润率</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--遮罩蒙版-->
+    <div class="layer hide"></div>
+    <!-- loading -->
+    <div class="loading hide">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+
+</body>
+</html>
